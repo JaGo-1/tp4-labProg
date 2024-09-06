@@ -37,10 +37,16 @@ public class Materias {
         this.año = año;
     }
 
+//    @Override
+//    public String toString() {
+//        return nombre + ("año" + año );
+//    }
+
     @Override
     public String toString() {
-        return nombre + ("año" + año );
+        return nombre;
     }
+    
     
     
     
