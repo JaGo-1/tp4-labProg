@@ -183,54 +183,35 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void altaMaterias_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_altaMaterias_btnMouseClicked
+         for (javax.swing.JInternalFrame frame : escritorio.getAllFrames()) {
+        frame.dispose();
+    }
+        
         Alta_materias internal_frame = new Alta_materias(materia);
         escritorio.add(internal_frame);
         internal_frame.setVisible(true);
     }//GEN-LAST:event_altaMaterias_btnMouseClicked
 
     private void altaAlumnos_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_altaAlumnos_btnMouseClicked
+         for (javax.swing.JInternalFrame frame : escritorio.getAllFrames()) {
+        frame.dispose();
+    }
+        
         Alta_alumnos internal_frame = new Alta_alumnos(alumno);
         escritorio.add(internal_frame);
         internal_frame.setVisible(true);
     }//GEN-LAST:event_altaAlumnos_btnMouseClicked
 
     private void inscripcion_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inscripcion_btnMouseClicked
+         for (javax.swing.JInternalFrame frame : escritorio.getAllFrames()) {
+        frame.dispose();
+    }
+        
         Formulario_Inscripcion internal_frame = new Formulario_Inscripcion(materia, alumno);
         escritorio.add(internal_frame);
         internal_frame.setVisible(true);
     }//GEN-LAST:event_inscripcion_btnMouseClicked
 
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
     
        public HashSet<Alumno> getAlumnos() {
         return alumno;
