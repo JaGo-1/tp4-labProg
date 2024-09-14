@@ -15,18 +15,6 @@ public class Formulario_Inscripcion extends javax.swing.JInternalFrame {
         this.alum = alumno;
         this.mat = materia;
         llenarCombo();
-//        //Combobox materias
-//        Iterator<Materias> materias = m.iterator();
-//        while(materias.hasNext()){
-//               materia_jComboBox.addItem(materias.next().getNombre());
-//        }
-//        
-//        //Combobox alumnos
-//        Iterator<Alumno> alumno = a.iterator();
-//        while(alumno.hasNext()){
-//               alumno_jComboBox.addItem(alumno.next().getNombre());
-//        }
-//    }
     }
 
     @SuppressWarnings("unchecked")
@@ -68,6 +56,11 @@ public class Formulario_Inscripcion extends javax.swing.JInternalFrame {
         salir_btn.setText("Salir");
         salir_btn.setBorder(null);
         salir_btn.setBorderPainted(false);
+        salir_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salir_btnMouseClicked(evt);
+            }
+        });
 
         nuevo_btn.setBackground(new java.awt.Color(133, 189, 252));
         nuevo_btn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -163,8 +156,7 @@ public class Formulario_Inscripcion extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nuevo_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevo_btnActionPerformed
-        // TODO add your handling code here:
-         Alumno alumno = (Alumno) alumno_jComboBox.getSelectedItem();
+        Alumno alumno = (Alumno) alumno_jComboBox.getSelectedItem();
         Materias materia = (Materias) materia_jComboBox.getSelectedItem();
 
         if (alumno != null && materia != null) {
@@ -185,9 +177,13 @@ public class Formulario_Inscripcion extends javax.swing.JInternalFrame {
             for (Materias materia : alumno.getMaterias()) {
                 materiasInscritas.append(materia.toString()).append("\n");
             }
-            JOptionPane.showMessageDialog(rootPane, "El alumno: " + alumno + " esta inscripto en las siguientes materias: \n\t" + materiasInscritas.toString());
+            JOptionPane.showMessageDialog(rootPane, "El alumno: " + alumno + " está inscrito en las siguientes materias: \n\t" + materiasInscritas.toString());
         }
     }//GEN-LAST:event_mostrar_btnActionPerformed
+
+    private void salir_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir_btnMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_salir_btnMouseClicked
 
     public void llenarCombo() {
         for (Alumno alumn : alum) {

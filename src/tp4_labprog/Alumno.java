@@ -1,7 +1,6 @@
 package tp4_labprog;
 
 import java.util.HashSet;
-import javax.swing.JOptionPane;
 
 public class Alumno {
 
@@ -41,9 +40,7 @@ public class Alumno {
     }
 
     public void agregarMateria(Materias m) {
-        if (materias.add(m) == true) {
-            JOptionPane.showMessageDialog(null, "El alumno se ha inscripto");
-        }
+            materias.add(m);
     }
 
     public int cantidadMaterias() {

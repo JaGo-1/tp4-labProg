@@ -88,6 +88,11 @@ public class Alta_materias extends javax.swing.JInternalFrame {
         salir_btn.setText("Salir");
         salir_btn.setBorder(null);
         salir_btn.setBorderPainted(false);
+        salir_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salir_btnMouseClicked(evt);
+            }
+        });
 
         nuevo_btn.setBackground(new java.awt.Color(133, 189, 252));
         nuevo_btn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -101,19 +106,9 @@ public class Alta_materias extends javax.swing.JInternalFrame {
 
         anio_label.setBackground(new java.awt.Color(255, 255, 255));
         anio_label.setBorder(null);
-        anio_label.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anio_labelActionPerformed(evt);
-            }
-        });
 
         codigo_label.setBackground(new java.awt.Color(255, 255, 255));
         codigo_label.setBorder(null);
-        codigo_label.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                codigo_labelActionPerformed(evt);
-            }
-        });
 
         jSeparator1.setForeground(new java.awt.Color(133, 189, 252));
         jSeparator1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -208,13 +203,9 @@ public class Alta_materias extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void anio_labelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anio_labelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_anio_labelActionPerformed
-
-    private void codigo_labelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigo_labelActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_codigo_labelActionPerformed
+    private void salir_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir_btnMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_salir_btnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

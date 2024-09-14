@@ -12,24 +12,6 @@ public class Alta_alumnos extends javax.swing.JInternalFrame {
 
         initComponents();
         this.alumno = alumno;
-
-//        guardar_btn.addActionListener(e ->{
-//            try{
-//                Alumno al = new Alumno(Integer.parseInt(legajo_label.getText()), apellido_label.getText(),nombre_label.getText());
-//                alumno.add(al);
-//                System.out.println(alumno.toString());
-//            }catch(Exception ex){
-//                JOptionPane.showMessageDialog(rootPane, "Asegúrese de ingresar los datos correctamente.");
-//            }
-//            
-//        });
-//        
-//        nuevo_btn.addActionListener(e ->{
-//            legajo_label.setText("");
-//            apellido_label.setText("");
-//            nombre_label.setText("");
-//        });
-        //
     }
 
     @SuppressWarnings("unchecked")
@@ -90,6 +72,11 @@ public class Alta_alumnos extends javax.swing.JInternalFrame {
         salir_btn.setText("Salir");
         salir_btn.setBorder(null);
         salir_btn.setBorderPainted(false);
+        salir_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                salir_btnMouseClicked(evt);
+            }
+        });
 
         nuevo_btn.setBackground(new java.awt.Color(133, 189, 252));
         nuevo_btn.setForeground(new java.awt.Color(255, 255, 255));
@@ -221,6 +208,10 @@ public class Alta_alumnos extends javax.swing.JInternalFrame {
         apellido_label.setText("");
         nombre_label.setText("");
     }//GEN-LAST:event_nuevo_btnActionPerformed
+
+    private void salir_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salir_btnMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_salir_btnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
